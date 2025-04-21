@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { View, StyleSheet, Dimensions, Animated } from "react-native";
-import LandingwithEmail from "@/app/Components/gettingstartedwithemail";
-import Landing2 from "@/app/Components/gettingstartedwithphone";
+import LandingwithEmail from "../../Components/gettingstartedwithemail";
+import Landing2 from "../../Components/gettingstartedwithphone";
 
 const { width, height } = Dimensions.get("window");
 
@@ -17,9 +17,9 @@ export default function Landing() {
         duration: 500,
         useNativeDriver: true,
       }).start();
-    }, 3000); // Change component every 3 seconds
+    }, 3000);
 
-    return () => clearInterval(interval); // Cleanup interval on unmount
+    return () => clearInterval(interval); 
   }, [showFirst]);
 
   return (
@@ -44,13 +44,11 @@ const styles = StyleSheet.create({
   },
   animatedContainer: {
     flexDirection: "row",
-    width: width * 2, // Two pages
-    height: '100%', // Ensure it takes full height
+    width: width * 2,
+    height: '100%', 
   },
   page: {
     width: width,
-    height: height, // Ensure each page takes full height
-    justifyContent: "center",
-    alignItems: "center",
+    height: '100%',
   },
 });

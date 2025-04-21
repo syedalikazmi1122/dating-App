@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, Animated, Dimensions } from 'react-native';
 import { Feather } from '@expo/vector-icons';
+import { useNavigation } from "@react-navigation/native";
 
 const PostCard = ({ 
   category,
@@ -11,7 +12,7 @@ const PostCard = ({
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const slideAnim = useRef(new Animated.Value(0)).current;
-  
+   const navigation = useNavigation();
   const toggleSidebar = () => {
     const toValue = isExpanded ? 0 : 1;
     setIsExpanded(!isExpanded);
@@ -30,7 +31,9 @@ const PostCard = ({
   });
 
   return (
-    <View style={styles.container}>
+    <TouchableOpacity 
+      onPress={()=> navigation.navigate('ViewfullPost', { photo: image })}
+    style={styles.container}>
       {/* Category Tag */}
       <View style={styles.categoryContainer}>
         <Image 
@@ -102,7 +105,7 @@ const PostCard = ({
       >
         <View style={styles.handleIndicator} />
       </TouchableOpacity>
-    </View>
+    </TouchableOpacity>
   );
 };
 

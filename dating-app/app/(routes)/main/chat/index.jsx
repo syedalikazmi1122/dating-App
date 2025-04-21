@@ -70,7 +70,7 @@ const MessagesScreen = ({ navigation }) => {
             name: 'Brandon Aminoff',
             message: "I've already registered, can't wai...",
             time: '08:08',
-            uri:'./../../../../assets/images/placeholder-profile.png',
+            uri:'./../../../../../assets/images/placeholder-profile.png',
             isOnline: true,
         },
         {
@@ -87,7 +87,7 @@ const MessagesScreen = ({ navigation }) => {
             name: 'Amina Mina',
             message: 'It will have two lines of heading -',
             time: '09:32',
-            uri:'./../../../../assets/images/placeholder-profile.png',
+            uri:'./../../../assets/images/placeholder-profile.png',
             uri:'./../../../../assets/images/placeholder-profile.png',
             isOnline: true,
         },
@@ -157,7 +157,12 @@ const MessagesScreen = ({ navigation }) => {
                     </View>
 
                     <View style={styles.section}>
+<View style={styles.parallelbuttons}>
                         <Text style={styles.sectionTitle}>Recent Matches</Text>
+                        <TouchableOpacity style={styles.redbutton} >
+                            <Text style={styles.redbutton}>Create new group</Text>
+                        </TouchableOpacity>
+                        </View>
                         <ScrollView
                             horizontal
                             showsHorizontalScrollIndicator={false}
@@ -184,6 +189,7 @@ const MessagesScreen = ({ navigation }) => {
                             ))}
                         </ScrollView>
                     </View>
+ 
                 </SafeAreaView>
             </View>
 
@@ -228,185 +234,216 @@ const MessagesScreen = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#76CABB',
-    },
-    safeArea: {
-        paddingTop: 50,
-        width: '100%',
-    },
-    topBar: {
-        height: Platform.OS === 'ios' ? 92 : 250,
-        width: '100%',
-        backgroundColor: 'transparent',
-        paddingTop: Platform.OS === 'ios' ? 44 : 0,
-    },
-    header: {
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    backButton: {
-        width: 40,
-        height: 40,
-        borderRadius: 40,
-        borderWidth: 1,
-        borderColor: 'rgba(255, 255, 255, 0.08)',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    headerTitle: {
-        position: 'absolute',
-        width: 125,
-        left: 125,
-        fontFamily: 'Poppins-Bold',
-        fontSize: 24,
-        lineHeight: 30,
-        textAlign: 'center',
-        color: '#FFFFFF',
-        fontWeight: '700',
-    },
-    section: {
-        paddingHorizontal: 24,
-        marginTop: 24,
-    },
-    sectionTitle: {
-        fontFamily: 'Poppins-SemiBold',
-        fontSize: 16,
-        lineHeight: 24,
-        color: '#FFFFFF',
-        fontWeight: '600',
-        marginBottom: 16,
-    },
-    matchesContainer: {
-        flexDirection: 'row',
-    },
-    matchesContentContainer: {
-        gap: 20,
-        paddingRight: 20,
-    },
-    matchItem: {
-        width: 60,
-        height: 60,
-        borderRadius: 16,
-        overflow: 'hidden',
-        backgroundColor: '#C4C4C4',
-    },
-    placeholderImage: {
-        width: '100%',
-        height: '100%',
-    },
-    contentContainer: {
-        flex: 1,
-        backgroundColor: '#FFFFFF',
-        marginTop: -20,
-        borderTopLeftRadius: 32,
-        borderTopRightRadius: 32,
-        overflow: 'hidden',
-    },
-    messagesContainer: {
-        flex: 1,
-        paddingTop: 24,
-    },
-    messageItem: {
-        flexDirection: 'row',
-        paddingVertical: 16,
-        paddingHorizontal: 24,
-        borderBottomWidth: 1,
-        borderBottomColor: 'rgba(34, 23, 42, 0.08)',
-    },
-    avatarContainer: {
-        width: 56,
-        height: 56,
-        position: 'relative',
-    },
-    placeholderAvatar: {
-        width: 56,
-        height: 56,
-        backgroundColor: '#C4C4C4',
-        borderRadius: 40,
-    },
-    onlineIndicator: {
-        position: 'absolute',
-        right: 0,
-        top: 0,
-        width: 12,
-        height: 12,
-        backgroundColor: '#76CABB',
-        borderRadius: 6,
-    },
-    messageContent: {
-        flex: 1,
-        marginLeft: 16,
-        justifyContent: 'center',
-    },
-    messageHeader: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: 4,
-    },
-    messageName: {
-        fontFamily: 'Poppins-SemiBold',
-        fontSize: 18,
-        lineHeight: 23,
-        color: '#22172A',
-        fontWeight: '600',
-    },
-    messageAge: {
-        fontFamily: 'Poppins-SemiBold',
-        fontSize: 18,
-        lineHeight: 23,
-        color: '#22172A',
-        fontWeight: '600',
-    },
-    messageTime: {
-        fontFamily: 'Poppins-Medium',
-        fontSize: 14,
-        lineHeight: 20,
-        color: '#9EA3AE',
-        fontWeight: '500',
-    },
-    messageText: {
-        fontFamily: 'Poppins-Regular',
-        fontSize: 14,
-        lineHeight: 20,
-        color: '#22172A',
-        fontWeight: '400',
-    },
-    countBadge: {
-        position: 'absolute',
-        left: 24,
-        top: 16,
-        zIndex: 1,
-    },
-    countText: {
-        fontFamily: 'Poppins-Bold',
-        fontSize: 16,
-        lineHeight: 24,
-        textAlign: 'center',
-        color: '#FFFFFF',
-        fontWeight: '700',
-    },
-    bottomNav: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        paddingVertical: 16,
-        backgroundColor: '#FFFFFF',
-        borderTopWidth: 1,
-        borderTopColor: 'rgba(34, 23, 42, 0.08)',
-    },
-    navItem: {
-        alignItems: 'center',
-    },
-    navIcon: {
-        width: 24,
-        height: 24,
-        backgroundColor: '#C4C4C4',
-        borderRadius: 12,
-    },
-    activeNavIcon: {
-        backgroundColor: '#76CABB',
-    },
+  container: {
+    flex: 1,
+    backgroundColor: '#76CABB',
+  },
+  parallelbuttons: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  redbutton: {
+    backgroundColor: '#FF5862',
+    color: 'white',
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 20,
+    marginTop: 10,
+    fontSize: 14,
+    marginBottom: 10,
+    fontWeight: '600',
+    textAlign: 'center',
+  },
+  safeArea: {
+    paddingTop: 50,
+    width: '100%',
+  },
+  topBar: {
+    height: Platform.OS === 'ios' ? 92 : 250,
+    width: '100%',
+    backgroundColor: 'transparent',
+    paddingTop: Platform.OS === 'ios' ? 44 : 0,
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  backButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 40,
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.2)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+  },
+  headerTitle: {
+    position: 'absolute',
+    width: 125,
+    left: 125,
+    fontFamily: 'Poppins-Bold',
+    fontSize: 24,
+    lineHeight: 30,
+    textAlign: 'center',
+    color: '#FFFFFF',
+    fontWeight: '700',
+  },
+  section: {
+    paddingHorizontal: 24,
+    marginTop: 24,
+  },
+  sectionTitle: {
+    fontFamily: 'Poppins-SemiBold',
+    fontSize: 18,
+    lineHeight: 26,
+    color: '#FFFFFF',
+    fontWeight: '600',
+    marginBottom: 16,
+  },
+  matchesContainer: {
+    flexDirection: 'row',
+  },
+  matchesContentContainer: {
+    gap: 20,
+    paddingRight: 20,
+  },
+  matchItem: {
+    width: 70,
+    height: 70,
+    borderRadius: 35,
+    overflow: 'hidden',
+    backgroundColor: '#C4C4C4',
+    borderWidth: 2,
+    borderColor: '#FFFFFF',
+  },
+  placeholderImage: {
+    width: '100%',
+    height: '100%',
+  },
+  contentContainer: {
+    flex: 1,
+    backgroundColor: '#FFFFFF',
+    marginTop: -20,
+    borderTopLeftRadius: 32,
+    borderTopRightRadius: 32,
+    overflow: 'hidden',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: -2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  messagesContainer: {
+    flex: 1,
+    paddingTop: 24,
+  },
+  messageItem: {
+    flexDirection: 'row',
+    paddingVertical: 16,
+    paddingHorizontal: 24,
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(34, 23, 42, 0.1)',
+  },
+  avatarContainer: {
+    width: 56,
+    height: 56,
+    position: 'relative',
+  },
+  placeholderAvatar: {
+    width: 56,
+    height: 56,
+    backgroundColor: '#C4C4C4',
+    borderRadius: 28,
+  },
+  onlineIndicator: {
+    position: 'absolute',
+    right: 0,
+    top: 0,
+    width: 12,
+    height: 12,
+    backgroundColor: '#76CABB',
+    borderRadius: 6,
+    borderWidth: 2,
+    borderColor: '#FFFFFF',
+  },
+  messageContent: {
+    flex: 1,
+    marginLeft: 16,
+    justifyContent: 'center',
+  },
+  messageHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 4,
+  },
+  messageName: {
+    fontFamily: 'Poppins-SemiBold',
+    fontSize: 18,
+    lineHeight: 23,
+    color: '#22172A',
+    fontWeight: '600',
+  },
+  messageAge: {
+    fontFamily: 'Poppins-SemiBold',
+    fontSize: 18,
+    lineHeight: 23,
+    color: '#9EA3AE',
+    fontWeight: '600',
+  },
+  messageTime: {
+    fontFamily: 'Poppins-Medium',
+    fontSize: 14,
+    lineHeight: 20,
+    color: '#9EA3AE',
+    fontWeight: '500',
+  },
+  messageText: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: 14,
+    lineHeight: 20,
+    color: '#22172A',
+    fontWeight: '400',
+  },
+  countBadge: {
+    position: 'absolute',
+    left: 24,
+    top: 16,
+    zIndex: 1,
+    backgroundColor: '#FF5862',
+    borderRadius: 12,
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+  },
+  countText: {
+    fontFamily: 'Poppins-Bold',
+    fontSize: 12,
+    lineHeight: 16,
+    textAlign: 'center',
+    color: '#FFFFFF',
+    fontWeight: '700',
+  },
+  bottomNav: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    paddingVertical: 16,
+    backgroundColor: '#FFFFFF',
+    borderTopWidth: 1,
+    borderTopColor: 'rgba(34, 23, 42, 0.1)',
+  },
+  navItem: {
+    alignItems: 'center',
+  },
+  navIcon: {
+    width: 24,
+    height: 24,
+    backgroundColor: '#C4C4C4',
+    borderRadius: 12,
+  },
+  activeNavIcon: {
+    backgroundColor: '#76CABB',
+  },
 });
 export default MessagesScreen;

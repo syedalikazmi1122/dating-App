@@ -4,13 +4,14 @@ import { Header } from "./../../Components/Login/headers";
 import { ProgressBar } from "./../../Components/Login/progress-bar";
 import ContinueButton from "../../Components/Login/continue-button";
 import Svg, { Path, Mask, Rect, G } from 'react-native-svg';
+import ApiRequest from "./../../utils/apirequest.js";
 
 const ITEM_HEIGHT = 50;
 const VISIBLE_ITEMS = 7;
 const MIDDLE_INDEX = Math.floor(VISIBLE_ITEMS / 2);
 const { height: SCREEN_HEIGHT, width: SCREEN_WIDTH } = Dimensions.get('window');
 
-const AgePickerScreen = ({ navigation }) => {
+export default function AgePickerScreen  ({ navigation }) {
   const [selectedAge, setSelectedAge] = useState(31);
   const scrollViewRef = useRef(null);
   const ages = Array.from({ length: 100 }, (_, i) => i + 18);
@@ -33,6 +34,19 @@ const AgePickerScreen = ({ navigation }) => {
       setSelectedAge(newAge);
     }
   };
+  const HandleSubmit = async() => {
+    console.log("selectedAge", selectedAge);
+      const response = await ApiRequest ("POST", "/users/register", formData);
+      console.log(response.data);
+      if (response.status === 201) {
+          console.log("Signup success");
+          alert("Signup successful!");
+          navigation.navigate("LoginWithEmail");
+      } else {
+          console.log("Signup failed");
+          alert("Signup failed. Please try again.");
+      }
+  }
 
   const handleMomentumScrollEnd = (event) => {
     const offsetY = event.nativeEvent.contentOffset.y;
@@ -135,8 +149,8 @@ const AgePickerScreen = ({ navigation }) => {
 
         <View style={styles.buttonContainer}>
           <ContinueButton
-            onPress={() => navigation.navigate("gender")}
-            disabled={!selectedAge}
+           onPress={HandleSubmit}
+          disabled={!selectedAge}
           />
         </View>
       </View>
@@ -235,4 +249,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AgePickerScreen;

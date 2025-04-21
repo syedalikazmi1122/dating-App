@@ -31,13 +31,13 @@ export default function Stories({ navigation }) {
         {
           id: 21,
           type: 'image',
-          uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqFz_6mfypGxjZ_gs9tAjw33altfN6n0CDcw&s',
+          uri: 'https://i.tribune.com.pk/media/images/Wahaj11686726078-1/Wahaj11686726078-1.jpg',
           duration: 5000,
         },
         {
           id: 22,
           type: 'image',
-          uri: 'https://viver-myexlusive-server.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2024/09/08063603/CompressJPEG.Online_1_35_2565.jpg',
+          uri: 'https://i.tribune.com.pk/media/images/Wahaj11686726078-1/Wahaj11686726078-1.jpg',
         }
       ],
       picture: placeholderImage,
@@ -49,7 +49,7 @@ export default function Stories({ navigation }) {
         {
           id: 31,
           type: 'image',
-          uri: 'https://viver-myexlusive-server.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2024/09/08063603/CompressJPEG.Online_1_35_2565.jpg',
+          uri: 'https://i.tribune.com.pk/media/images/Wahaj11686726078-1/Wahaj11686726078-1.jpg',
           duration: 5000,
         }
       ],

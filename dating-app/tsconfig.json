@@ -13,5 +13,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-, "app/(routes)/auth/login.jsx", "app/Components/Login/continue-button.jsx", "app/Components/Login/progress-bar.jsx"  ]
+, "app/(routes)/auth/login.jsx", "app/Components/Login/continue-button.jsx", "app/Components/Login/progress-bar.jsx", "app/Components/gettingstartedwithemail.jsx", "app/(routes)/auth/verification.jsx"  ]
 }

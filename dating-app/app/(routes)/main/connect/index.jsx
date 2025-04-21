@@ -14,8 +14,10 @@ import {
 const { width } = Dimensions.get('window');
 const cardWidth = (width - 48) / 2; // 2 columns with padding
 import uri from './../../../../assets/images/placeholder-profile.png';
+import { useNavigation } from "@react-navigation/native";
 
 const MatchesScreen = () => {
+  const navigation = useNavigation();
   const topMatches = [
     { id: 1, type: 'likes', count: 32 },
     { id: 2, type: 'connect', count: 15 }
@@ -40,7 +42,9 @@ const MatchesScreen = () => {
   );
 
   const renderMatchCard = ({ item }) => (
-    <TouchableOpacity style={styles.matchCard}>
+    <TouchableOpacity 
+     onPress={() => navigation.navigate("ConnectDetails")}
+    style={styles.matchCard}>
       <Image source={item.image} style={styles.matchImage} />
       <View style={styles.matchPercentage}>
         <Text style={styles.matchPercentageText}>{`${item.match}% Match`}</Text>

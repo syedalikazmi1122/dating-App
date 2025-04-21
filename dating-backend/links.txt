@@ -1,0 +1,24 @@
+user routes
+https://documenter.getpostman.com/view/39728835/2sAYBPmERn
+
+list routes
+https://documenter.getpostman.com/view/39728835/2sAYBPnEoJ
+
+movies routes
+https://documenter.getpostman.com/view/39728835/2sAYBPnEsb
+
+discussion routes
+
+https://documenter.getpostman.com/view/39728835/2sAYBPnEiq
+
+celebrity routes
+
+https://documenter.getpostman.com/view/39728835/2sAYBPnEir
+
+ratings and reviews routes
+
+https://documenter.getpostman.com/view/39728835/2sAYBPnEsd
+
+news routes
+
+https://documenter.getpostman.com/view/39728835/2sAYBPnEsc

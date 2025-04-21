@@ -4,10 +4,11 @@ import { Header } from '../../Components/Login/headers';
 import { ProgressBar } from '../../Components/Login/progress-bar';
 import ContinueButton from '../../Components/Login/continue-button';
 import Svg, { Path } from 'react-native-svg';
-
+import useAuthStore from '@/app/zustand/authstore';
 const { width, height } = Dimensions.get('window');
 
 const LocationScreen = ({ navigation }) => {
+  const login = useAuthStore(state => state.login);
   const [showManualEntry, setShowManualEntry] = useState(false);
   const [locationData, setLocationData] = useState({
     country: '',
@@ -17,6 +18,7 @@ const LocationScreen = ({ navigation }) => {
   });
 
   const handleLocationAccess = () => {
+    login();
     // Implement location access logic here
     console.log('Requesting location access');
   };
